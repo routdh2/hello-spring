@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="
+http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+
+<!-- bean definitions here -->
+<bean id="player" class="com.hellospring.Player" scope="prototype">
+	<constructor-arg index="0" value="jingle-bell"/>
+</bean>
+
+<bean id="securestore" class="com.thirdparty.SecureStoreImpl">
+	<constructor-arg type="int" value="20"/>
+	<constructor-arg type="String" value="dhananjay"/>
+	<constructor-arg type="String" value="password"/>
+	<constructor-arg>
+	<list>
+		<value>12.2.3.4</value>
+		<value>23.4.5.6</value>
+	</list>
+	</constructor-arg>
+	<constructor-arg>
+	<map>
+		<entry key="core" value="16"/>
+		<entry key="ram" value="4gb"/>
+		<entry key="cpu" value="intel"/>
+	</map>
+	</constructor-arg>
+</bean>
+
+<bean id="thirdparty" class="com.hellospring.SecureStoreAccessApp">
+	<constructor-arg ref="securestore"></constructor-arg>
+</bean>
+
+<bean id="serverconfig" class="com.hellospring.ServerConfig">
+	<constructor-arg type="int" value="10"/>
+	<constructor-arg type="String" value="dhananjay"/>
+	<constructor-arg type="String" value="password"/>
+	<constructor-arg type="String" value="10.3.4.5"/>
+	<property name="configParams">
+		<map>
+			<entry key="cpu" value="intel"/>
+			<entry key="ram" value="4gb"/>
+		</map>
+	</property>
+</bean>
+
+<bean id="serverconfig2" class="com.hellospring.ServerConfig">
+	<constructor-arg type="int" value="10"/>
+	<constructor-arg type="String" value="dhananjay"/>
+	<constructor-arg type="String" value="password"/>
+	<constructor-arg type="String" value="10.3.4.5"/>
+	<property name="configParams">
+		<map>
+			<entry key="cpu" value="intel"/>
+			<entry key="ram" value="4gb"/>
+		</map>
+	</property>
+</bean>
+
+<context:component-scan base-package="com.hellospring"></context:component-scan>
+
+</beans>
