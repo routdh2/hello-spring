@@ -9,16 +9,21 @@ import java.util.Map;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.EnableAspectJAutoProxy;
 
 import com.hellospring.Instrument;
+import com.hellospring.Performer;
 import com.hellospring.Piano;
 import com.hellospring.Player;
 import com.hellospring.SecureStoreAccessApp;
 import com.hellospring.ServerConfig;
+import com.hellospring.Tanmay;
+import com.hellospring.aspect.Audience;
 import com.thirdparty.SecureStore;
 import com.thirdparty.SecureStoreImpl;
 
 @Configuration
+@EnableAspectJAutoProxy
 public class JavaConfig {
 	@Bean
 	@Autowired
@@ -63,5 +68,19 @@ public class JavaConfig {
 		config.setConfigParams(configParams);
 		return config;
 	}
-
+	
+	@Bean
+	public Audience audience() {
+		return new Audience();
+	}
+	
+	@Bean
+	public Performer performer() {
+		return new Performer();
+	}
+	
+	@Bean
+	public Tanmay tanmay() {
+		return new Tanmay();
+	}
 }
