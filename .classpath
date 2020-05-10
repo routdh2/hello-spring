@@ -72,5 +72,7 @@
 	<classpathentry kind="lib" path="lib/spring-websocket-5.0.2.RELEASE.jar"/>
 	<classpathentry kind="lib" path="C:/Users/Asus/Desktop/ExternalJars/apiimplementor.jar"/>
 	<classpathentry kind="lib" path="C:/Users/Asus/Desktop/ExternalJars/trustedsource.jar"/>
+	<classpathentry kind="lib" path="C:/aspectj1.9/lib/aspectjrt.jar"/>
+	<classpathentry kind="lib" path="C:/aspectj1.9/lib/aspectjweaver.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
