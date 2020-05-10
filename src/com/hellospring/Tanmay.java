@@ -10,6 +10,12 @@ public class Tanmay {
 	
 	public void play() {
 		System.out.println("Tanmay is playing.");
+//		throw new RuntimeException();
+		
+	}
+	
+	public void playTrack(int trackNumber) {
+		System.out.println("Playing track : "+trackNumber);
 	}
 
 }

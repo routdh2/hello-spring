@@ -19,6 +19,7 @@ import com.hellospring.SecureStoreAccessApp;
 import com.hellospring.ServerConfig;
 import com.hellospring.Tanmay;
 import com.hellospring.aspect.Audience;
+import com.hellospring.aspect.CountTracks;
 import com.thirdparty.SecureStore;
 import com.thirdparty.SecureStoreImpl;
 
@@ -82,5 +83,10 @@ public class JavaConfig {
 	@Bean
 	public Tanmay tanmay() {
 		return new Tanmay();
+	}
+	
+	@Bean
+	public CountTracks countTracks() {
+		return new CountTracks();
 	}
 }
